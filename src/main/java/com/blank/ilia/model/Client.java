@@ -7,9 +7,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-import org.hibernate.annotations.Formula;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -24,12 +24,18 @@ public class Client extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JsonIgnore
     private Long id;
+    @Column(nullable = false)
     private String name;
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    @NotNull(message = "GENDER IS REQUIRED")
     private GenderEnum gender;
+    @NotNull(message = "BIRTHDATE IS REQUIRED")
+    @Column(nullable = false)
     private LocalDate birthdate;
     private Integer age;
     @OneToOne
+    @NotNull(message = "CITY IS REQUIRED")
     private City city;
 
     @PrePersist

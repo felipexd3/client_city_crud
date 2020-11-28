@@ -1,5 +1,6 @@
 package com.blank.ilia.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.CreationTimestamp;
@@ -17,10 +18,13 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BaseEntity {
+    @JsonIgnore
     @CreationTimestamp
     private LocalDateTime createdAt;
+    @JsonIgnore
     @UpdateTimestamp
     private LocalDateTime lastUpdatedAt;
+    @JsonIgnore
     private LocalDateTime removedAt;
     private UUID uuid;
 

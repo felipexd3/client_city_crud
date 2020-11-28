@@ -13,12 +13,9 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Builder
 public class ClientDTO {
-    @NotNull(message = "NAME IS REQUIRED")
+    @NotNull
     private String name;
-    @NotNull(message = "GENDER IS REQUIRED")
     private GenderEnum gender;
-    @NotNull(message = "BIRTHDATE IS REQUIRED")
     private LocalDate birthdate;
-    @NotNull(message = "CITY IS REQUIRED")
     private City city;
 }

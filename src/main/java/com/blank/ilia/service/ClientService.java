@@ -8,8 +8,10 @@ import com.blank.ilia.repository.CityRepository;
 import com.blank.ilia.repository.ClientRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
+import javax.ws.rs.BadRequestException;
 import java.util.List;
 
 @Service
@@ -30,6 +32,8 @@ public class ClientService {
                     .birthdate(client.getBirthdate())
                     .gender(client.getGender())
                     .city(city).build());
+        } catch (DataIntegrityViolationException e) {
+            throw new BadRequestException("One or more parameters are required");
         } catch (Exception e) {
             throw new RuntimeException();
         }
@@ -45,5 +49,9 @@ public class ClientService {
                 .orElseThrow(() -> new EntityNotFoundException(Client.class));
     }
 
-
+    public Client editClient(Long id, ClientDTO clientDTO) {
+        Client client = this.clientRepository.findById(id).orElseThrow(() -> new EntityNotFoundException(Client.class));
+        client.setName(clientDTO.getName());
+        return this.clientRepository.save(client);
+    }
 }

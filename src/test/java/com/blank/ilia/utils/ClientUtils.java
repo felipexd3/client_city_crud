@@ -11,14 +11,14 @@ import java.time.LocalDate;
 
 @Component
 public class ClientUtils {
-    public static ClientDTO mountClient(Faker faker) {
+    public static ClientDTO mountClient(Faker faker, Boolean withError) {
         return ClientDTO.builder()
                 .name(faker.gameOfThrones().character())
                 .birthdate(LocalDate.now())
                 .city(City.builder()
                         .name(faker.address().cityName())
                         .state(StateEnum.PE).build())
-                .gender(GenderEnum.M)
+                .gender(withError ? null : GenderEnum.M)
                 .build();
     }
 }

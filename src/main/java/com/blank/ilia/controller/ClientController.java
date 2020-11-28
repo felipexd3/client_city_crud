@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.ws.rs.BadRequestException;
 
 @RestController
 @RequestMapping("client")
@@ -21,8 +22,10 @@ public class ClientController {
     public ResponseEntity saveClient(@RequestBody @Valid ClientDTO clientDTO) {
         try {
             return new ResponseEntity(this.clientService.saveClient(clientDTO), HttpStatus.OK);
+        } catch (BadRequestException e) {
+            return new ResponseEntity(e.getMessage(), HttpStatus.BAD_REQUEST);
         } catch (Exception e) {
-            return new ResponseEntity(e.getMessage(), HttpStatus.OK);
+            return new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -41,6 +44,15 @@ public class ClientController {
             return new ResponseEntity(this.clientService.fetchClientById(id), HttpStatus.OK);
         } catch (EntityNotFoundException e) {
             return new ResponseEntity(e.getMessage(), HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @PutMapping("{id}")
+    public ResponseEntity editClient(@PathVariable("id") Long id, @RequestBody @Valid ClientDTO clientDTO) {
+        try {
+            return new ResponseEntity(this.clientService.editClient(id, clientDTO), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
