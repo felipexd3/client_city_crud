@@ -26,7 +26,7 @@ nas tecnologias utilizadas.
  - Lombok
  - Swagger
  
-Após iniciar a aplicação é possível acessar a documentação através do [link](http://localhost:9000/api/swagger-ui.html#/client-controller)
+Após iniciar a aplicação é possível acessar a documentação através do [link](http://localhost:9000/api/swagger-ui.html)
 
 ##### Apêndice:
 
