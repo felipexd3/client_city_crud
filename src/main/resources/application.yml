@@ -1,0 +1,33 @@
+server:
+  port: 9000
+  servlet:
+    context-path: /api/
+
+Spring:
+  jpa:
+    properties:
+      hibernate:
+        format_sql: false
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://suleiman.db.elephantsql.com:5432/yjjwpvvh
+    username: yjjwpvvh
+    password: 'LqOAR3rrx385o0bCieATEDEoYdVOmZwg'
+    continueOnError: true
+    initialSize: 0
+    timeBetweenEvictionRunsMillis: 5000
+    minEvictableIdleTimeMillis: 5000
+    minIdle: 0
+    initialization-mode: always
+    hikari:
+      idle-timeout: 10000
+      maximum-pool-size: 200000
+      auto-commit: true
+      minimum-idle: 10
+    test-while-idle: true
+    time-between-eviction-runs-millis: 3600000
+    validation-query: select 1
