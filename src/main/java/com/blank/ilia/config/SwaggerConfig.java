@@ -36,10 +36,6 @@ public class SwaggerConfig {
                     .message("500 message")
                     .responseModel(new ModelRef("Error"))
                     .build());
-            add(new ResponseMessageBuilder()
-                    .code(403)
-                    .message("Forbidden!")
-                    .build());
         }};
     }
 }
