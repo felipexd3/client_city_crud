@@ -28,3 +28,6 @@ nas tecnologias utilizadas.
  
 Após iniciar a aplicação é possível acessar a documentação através do [link](http://localhost:9000/api/swagger-ui.html#/client-controller)
 
+##### Apêndice:
+
+Authorization: Basic YWRhby5zaWx2YToxMjM=
