@@ -1,4 +1,3 @@
-<img src="https://github.com/felipexd3/client_city_crud/workflows/CI/badge.svg?branch=master">
 <img src="https://github.com/felipexd3/client_city_crud/workflows/CI/badge.svg?branch=dev">
 
 # Documentação
