@@ -1,4 +1,4 @@
-https://github.com/felipexd3/client_city_crud/workflows/CI/badge.svg
+! [nome do fluxo de trabalho de exemplo]&nbsp;(https://github.com/felipexd3/client_city_crud/workflows/CI/badge.svg)
 
 # Documentação
 
