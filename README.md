@@ -1,4 +1,4 @@
-https://github.com/felipexd3/client_city_crud/workflows/workflows/badge.svg
+https://github.com/felipexd3/client_city_crud/workflows/CI/badge.svg
 
 # Documentação
 
