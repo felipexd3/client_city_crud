@@ -1,4 +1,4 @@
-<img src="https://github.com/felipexd3/client_city_crud/workflows/CI/badge.svg?branch=dev">
+<img src="https://github.com/felipexd3/client_city_crud/workflows/CI/badge.svg">
 
 # Documentação
 
