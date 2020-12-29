@@ -1,3 +1,5 @@
+https://github.com/felipexd3/client_city_crud/workflows/workflows/badge.svg
+
 # Documentação
 
 #### Descrição do projeto
